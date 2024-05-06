@@ -25,11 +25,11 @@ export default function ListPortfolio({ dataNew, toggle }) {
             );
           }}
         >
-          <div className="overflow-hidden w-full rounded-xl border-gold border-[1px]">
+          <div className="overflow-hidden rounded-xl border-gold border-[1px]">
             <img
               src={item.photos ? item.photos[0] : "/images/events/FL2SN1.jpg"}
               alt=""
-              className="hover:scale-125 transition-all duration-500"
+              className="w-full hover:scale-125 transition-all duration-500"
             />
           </div>
           <div className="pt-4 px-2 md:px-4">
