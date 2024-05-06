@@ -3,7 +3,6 @@ import "../App.css";
 import Navbar from "../components/Navbar";
 import AboutUs from "../components/AboutUs";
 import Services from "../components/Services";
-import Portfolio from "../components/Portfolio";
 import Footer from "../components/Footer";
 import Clients from "../components/Clients";
 
@@ -12,7 +11,8 @@ import React, { useRef, useEffect, useState, Suspense } from "react";
 import { BarLoader } from "react-spinners";
 
 const Hero = React.lazy(() => import("../components/Hero.jsx"));
-const OurGallery = React.lazy(() => import("../components/OurGaller.jsx"));
+const OurGallery = React.lazy(() => import("../components/OurGallery.jsx"));
+const Portfolio = React.lazy(() => import("../components/Portfolio.jsx"));
 
 function Home({ bahasa }) {
   const [loading, setLoading] = useState(true);
