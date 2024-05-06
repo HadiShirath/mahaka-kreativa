@@ -54,9 +54,10 @@ export default function Hero({ click, bahasa }) {
       </div>
 
       <img
-        src="/images/background.jpg"
+        src="/images/background.png"
         alt=""
         className="absolute top-[400px] md:top-0 opacity-30 h-1/3 md:h-auto z-[-1]"
+        loading="lazy"
       />
     </motion.div>
   );
