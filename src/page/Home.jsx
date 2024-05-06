@@ -15,27 +15,27 @@ const OurGallery = React.lazy(() => import("../components/OurGallery.jsx"));
 const Portfolio = React.lazy(() => import("../components/Portfolio.jsx"));
 
 function Home({ bahasa }) {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const aboutUsRef = useRef();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1800);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1800);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (loading) {
-    return (
-      <div className="flex flex-col w-full h-full justify-center items-center">
-        <div className="w-48 h-auto pb-12">
-          <img src="/images/logo-mahaka.png" alt="" />
-        </div>
-        <BarLoader color={"#B3955A"} loading={loading} height={2} width={200} />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="flex flex-col w-full h-full justify-center items-center">
+  //       <div className="w-48 h-auto pb-12">
+  //         <img src="/images/logo-mahaka.png" alt="" />
+  //       </div>
+  //       <BarLoader color={"#B3955A"} loading={loading} height={2} width={200} />
+  //     </div>
+  //   );
+  // }
 
   const scrollToAboutUs = () => {
     aboutUsRef.current.scrollIntoView({
@@ -54,7 +54,7 @@ function Home({ bahasa }) {
             </div>
             <BarLoader
               color={"#B3955A"}
-              loading={loading}
+              loading={true}
               height={2}
               width={200}
             />
