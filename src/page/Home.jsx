@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Clients from "../components/Clients";
 
 import { connect } from "react-redux";
-import React, { useRef, Suspense } from "react";
+import React, { useRef, useEffect, useState, Suspense } from "react";
 import { BarLoader } from "react-spinners";
 
 const Hero = React.lazy(() => import("../components/Hero.jsx"));
@@ -16,6 +16,26 @@ const Portfolio = React.lazy(() => import("../components/Portfolio.jsx"));
 
 function Home({ bahasa }) {
   const aboutUsRef = useRef();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col w-full h-full justify-center items-center">
+        <div className="w-48 h-auto pb-12">
+          <img src="/images/logo-mahaka.png" alt="" />
+        </div>
+        <BarLoader color={"#B3955A"} loading={loading} height={2} width={200} />
+      </div>
+    );
+  }
 
   const scrollToAboutUs = () => {
     aboutUsRef.current.scrollIntoView({
