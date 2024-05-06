@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Clients from "../components/Clients";
 
 import { connect } from "react-redux";
-import React, { useRef, useEffect, useState, Suspense } from "react";
+import React, { useRef, Suspense } from "react";
 import { BarLoader } from "react-spinners";
 
 const Hero = React.lazy(() => import("../components/Hero.jsx"));
@@ -15,27 +15,7 @@ const OurGallery = React.lazy(() => import("../components/OurGallery.jsx"));
 const Portfolio = React.lazy(() => import("../components/Portfolio.jsx"));
 
 function Home({ bahasa }) {
-  // const [loading, setLoading] = useState(true);
   const aboutUsRef = useRef();
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 1800);
-
-  //   return () => clearTimeout(timer);
-  // }, []);
-
-  // if (loading) {
-  //   return (
-  //     <div className="flex flex-col w-full h-full justify-center items-center">
-  //       <div className="w-48 h-auto pb-12">
-  //         <img src="/images/logo-mahaka.png" alt="" />
-  //       </div>
-  //       <BarLoader color={"#B3955A"} loading={loading} height={2} width={200} />
-  //     </div>
-  //   );
-  // }
 
   const scrollToAboutUs = () => {
     aboutUsRef.current.scrollIntoView({
@@ -45,22 +25,17 @@ function Home({ bahasa }) {
     });
   };
   return (
-    <div className="relative">
-      <Suspense
-        fallback={
-          <div className="flex flex-col w-full h-full justify-center items-center">
-            <div className="w-48 h-auto pb-12">
-              <img src="/images/logo-mahaka.png" alt="" />
-            </div>
-            <BarLoader
-              color={"#B3955A"}
-              loading={true}
-              height={2}
-              width={200}
-            />
+    <Suspense
+      fallback={
+        <div className="flex flex-col w-full h-full justify-center items-center">
+          <div className="w-48 h-auto pb-12">
+            <img src="/images/logo-mahaka.png" alt="" />
           </div>
-        }
-      >
+          <BarLoader color={"#B3955A"} loading={true} height={2} width={200} />
+        </div>
+      }
+    >
+      <div className="relative">
         <a
           className="absolute"
           href="https://api.whatsapp.com/send/?phone=6282323896763"
@@ -81,8 +56,8 @@ function Home({ bahasa }) {
         <OurGallery bahasa={bahasa} />
         <Clients bahasa={bahasa} />
         <Footer />
-      </Suspense>
-    </div>
+      </div>
+    </Suspense>
   );
 }
 
