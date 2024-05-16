@@ -70,6 +70,7 @@ import {
   AdhiKS3,
   AdhiKS4,
 } from "/public/images/index.js";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function OurGallery({ bahasa }) {
   const containerRef = useRef(null);
@@ -196,9 +197,9 @@ export default function OurGallery({ bahasa }) {
       >
         {randomArray.length &&
           randomArray.map((item, index) => (
-            <img
-              src={images[item]}
+            <LazyLoadImage
               key={index}
+              src={images[item]}
               alt=""
               className="w-full md:w-80 md:h-50 px-4 md:px-2"
             />

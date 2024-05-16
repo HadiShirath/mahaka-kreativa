@@ -5,6 +5,7 @@ export default function ModalProject({
   modalIsOpen,
   dataModal,
   setModalIsOpen,
+  isImage,
 }) {
   return (
     <div
@@ -23,7 +24,17 @@ export default function ModalProject({
         className="border-opacity-40 w-[80%] rounded-3xl absolute"
       >
         <div className="w-full flex items-center justify-center">
-          <img src={dataModal} alt="" className="" />
+          {isImage ? (
+            <img src={dataModal} alt="" className="bg-black" />
+          ) : (
+            <video
+              src={dataModal}
+              alt=""
+              autoPlay
+              controls
+              className="bg-black"
+            />
+          )}
         </div>
       </motion.div>
     </div>

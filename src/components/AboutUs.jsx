@@ -28,6 +28,7 @@ const AboutUs = forwardRef(({ bahasa }, ref) => {
       >
         <div className="hidden lg:flex w-[90%] lg:ml-8">
           <img src="/images/about-us.png" alt="" className="w-auto h-auto" />
+          {/* <video src="/videos/agam-inong-1.mp4" autoPlay controls loop /> */}
         </div>
         <div className="w-full ">
           <p className="text-4xl lg:text-5xl font-semibold pb-2">
@@ -41,7 +42,7 @@ const AboutUs = forwardRef(({ bahasa }, ref) => {
               ? "We specialize in turning events into unforgettable moments. With our creative flair, meticulous planning, and flawless execution, we create experiences that go beyond the ordinary, leaving a lasting impression on every guest."
               : "Kami mengkhususkan diri dalam mengubah peristiwa menjadi momen tak terlupakan. Dengan bakat kreatif, perencanaan yang cermat, dan pelaksanaan yang sempurna, kami menciptakan pengalaman yang melampaui hal biasa, meninggalkan kesan mendalam pada setiap tamu."}
           </h2>
-          <a href="/about-us">
+          <a href="/about-us" aria-label="About Us">
             <button className="flex border-gold border-[2px] px-6 py-4 rounded-2xl text-md md:text-xl items-center gap-6 text-white">
               {!bahasa ? "Learn Information" : "Selengkapnya"}
 

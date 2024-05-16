@@ -37,7 +37,7 @@ export default function Services({ bahasa }) {
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ amount: 0.5 }}
+        viewport={{ amount: 0.2 }}
         className="flex flex-wrap justify-center gap-12 py-16"
       >
         {services.map((item, index) => (

@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { MdClose } from "react-icons/md";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default function ModalPortfolio({
   modalIsOpen,
@@ -47,14 +49,23 @@ export default function ModalPortfolio({
                 </div>
                 <div className="absolute overflow-hidden w-full h-1/2 z-[1] ">
                   <div className="absolute w-full h-full bg-black opacity-80" />
-                  <img src={photos[1]} alt="" className="w-full " />
+                  <LazyLoadImage src={photos[1]} alt="" className="w-full " />
                 </div>
               </div>
-              <div className="grid grid-cols-4 gap-2 pt-4 z-[2]">
+              <div className="grid grid-cols-4 gap-x-2 pt-4 z-[2]">
                 {photos.map((item, index) => {
                   return (
-                    <div key={index} onClick={() => setvalueImagesEvent(index)}>
-                      <img src={item} alt="" className="w-full" />
+                    <div
+                      key={index}
+                      onClick={() => setvalueImagesEvent(index)}
+                      className="bg-gold bg-opacity-30"
+                    >
+                      <LazyLoadImage
+                        src={item}
+                        alt=""
+                        className="w-full h-full bg-cover"
+                        effect="blur"
+                      />
                     </div>
                   );
                 })}
@@ -88,7 +99,7 @@ export default function ModalPortfolio({
           </div>
           <div className="flex flex-col md:flex-row ">
             <div className="w-full overflow-hidden">
-              <img
+              <LazyLoadImage
                 src={photos[valueImagesEvent]}
                 alt=""
                 className="w-full bg-cover border border-gold rounded-lg md:rounded-2xl mr-8"
@@ -102,7 +113,7 @@ export default function ModalPortfolio({
                   }
                   return (
                     <div key={index} onClick={() => setvalueImagesEvent(index)}>
-                      <img
+                      <LazyLoadImage
                         src={item}
                         alt=""
                         className="hover:border-gold border-black border-[2px] w-full cursor-pointer "

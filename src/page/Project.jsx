@@ -7,7 +7,10 @@ import { slideInFromBottom } from "../utils/motion";
 import { connect } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { HiMail } from "react-icons/hi";
+import { FaPlay } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -32,6 +35,11 @@ function Project({ bahasa }) {
     setDataModal(photo);
   };
 
+  function isImageFile(filename) {
+    const imagePattern = /\.(jpg|png|jpeg)$/i;
+    return imagePattern.test(filename);
+  }
+
   return (
     <>
       {modalIsOpen && (
@@ -39,6 +47,7 @@ function Project({ bahasa }) {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           dataModal={dataModal}
+          isImage={isImageFile(dataModal)}
         />
       )}
       <div className="flex top-0 pb-6 z-[10] w-full bg-black">
@@ -112,14 +121,16 @@ function Project({ bahasa }) {
                     <div className="swiper-slide img">
                       <div className="absolute w-full h-full bg-black bg-opacity-30  lg:bg-opacity-80" />
                       <div className="absolute w-full h-full bg-gradient-to-t from-black to-transparent" />
-                      <img
-                        src={
-                          project.photos
-                            ? project.photos[0]
-                            : "/images/events/FL2SN-1.jpg"
-                        }
-                        alt=""
-                      />
+                      <div className="w-full h-full bg-black">
+                        <LazyLoadImage
+                          src={
+                            project.photos
+                              ? project.photos[0]
+                              : "/images/events/FL2SN-1.jpg"
+                          }
+                          alt=""
+                        />
+                      </div>
                     </div>
                     <motion.div
                       variants={slideInFromBottom(0.2)}
@@ -136,15 +147,24 @@ function Project({ bahasa }) {
                         {project.subtitle}
                       </h2>
 
-                      <div className="flex gap-2 pt-8">
+                      <div className="grid grid-cols-4 gap-2 pt-8 overflow-y-hidden xl:h-[260px] ">
                         {project.photos.map((photo, innerIndex2) => (
                           <motion.div
                             key={innerIndex2}
-                            className="hover:border-gold border-[2px] border-black"
+                            className="hover:border-gold w-full border-[2px] border-transparent"
                             variants={slideInFromBottom(`0.${innerIndex2 + 2}`)}
                             onClick={() => toggle(photo)}
                           >
-                            <img src={photo} alt="" />
+                            {isImageFile(photo) ? (
+                              <LazyLoadImage src={photo} alt="" />
+                            ) : (
+                              <div className="relative bg-black flex w-full h-full justify-center items-center">
+                                <div className="absolute bg-black bg-opacity-50 rounded-full p-2 md:p-4 flex items-center justify-center ">
+                                  <FaPlay className="h-2 md:h-full" />
+                                </div>
+                                <video src={photo} muted />
+                              </div>
+                            )}
                           </motion.div>
                         ))}
                       </div>

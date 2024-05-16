@@ -8,7 +8,7 @@ import Clients from "../components/Clients";
 
 import { connect } from "react-redux";
 import React, { useRef, useEffect, useState, Suspense } from "react";
-import { BarLoader } from "react-spinners";
+// import { BarLoader } from "react-spinners";
 
 const Hero = React.lazy(() => import("../components/Hero.jsx"));
 const OurGallery = React.lazy(() => import("../components/OurGallery.jsx"));
@@ -21,7 +21,7 @@ function Home({ bahasa }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1800);
+    }, 1400);
 
     return () => clearTimeout(timer);
   }, []);
@@ -32,7 +32,7 @@ function Home({ bahasa }) {
         <div className="w-48 h-auto pb-12">
           <img src="/images/logo-mahaka.png" alt="" />
         </div>
-        <BarLoader color={"#B3955A"} loading={loading} height={2} width={200} />
+        {/* <BarLoader color={"#B3955A"} loading={loading} height={2} width={200} /> */}
       </div>
     );
   }
@@ -51,7 +51,6 @@ function Home({ bahasa }) {
           <div className="w-48 h-auto pb-12">
             <img src="/images/logo-mahaka.png" alt="" />
           </div>
-          <BarLoader color={"#B3955A"} loading={true} height={2} width={200} />
         </div>
       }
     >

@@ -2,9 +2,8 @@
 import { dataProject } from "../data/project.js";
 import { FaChevronRight } from "react-icons/fa6";
 import { useState } from "react";
-
-import ListPortfolio from "./atoms/ListPortfolio";
 import ModalPortfolio from "./atoms/ModalPortfolio";
+import ListPortfolio from "./atoms/ListPortfolio";
 
 export default function Portfolio({ bahasa }) {
   const data = Object.values(dataProject)

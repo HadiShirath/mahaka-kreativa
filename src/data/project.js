@@ -77,6 +77,8 @@ import {
   AdhiKS4,
 } from "/public/images";
 
+// import { VidAgamInong1, VidAgamInong2 } from "/public/videos";
+
 export const dataProject = [
   {
     year: "2018",
@@ -169,13 +171,26 @@ export const dataProject = [
           PeresmianJalanTol4,
         ],
       },
+    ],
+  },
+  {
+    year: "2021",
+    project: [
       {
         date: "19-23 Oktober 2021",
         title: "Agam Inong Aceh 2021",
-        photos: [AgamInong1, AgamInong2, AgamInong3, AgamInong4],
+        photos: [
+          AgamInong1,
+          AgamInong2,
+          AgamInong3,
+          AgamInong4,
+          // VidAgamInong1,
+          // VidAgamInong2,
+        ],
       },
     ],
   },
+
   {
     year: "2022",
     project: [

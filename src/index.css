@@ -41,10 +41,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 .dropdown-icon {
   transition: transform 0.3s ease;
@@ -83,17 +79,4 @@ button:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #646cff;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { slideInFromBottom } from "../../utils/motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function ListPortfolio({ dataNew, toggle }) {
   return (
@@ -25,8 +26,8 @@ export default function ListPortfolio({ dataNew, toggle }) {
             );
           }}
         >
-          <div className="overflow-hidden rounded-xl border-gold border-[1px]">
-            <img
+          <div className="overflow-hidden rounded-xl">
+            <LazyLoadImage
               src={item.photos ? item.photos[0] : "/images/events/FL2SN1.jpg"}
               alt=""
               className="w-full hover:scale-125 transition-all duration-500"

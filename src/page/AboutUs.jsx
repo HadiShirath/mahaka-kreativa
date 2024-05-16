@@ -7,10 +7,14 @@ import { connect } from "react-redux";
 
 function AboutUs({ bahasa }) {
   const team = [
-    "/images/team-1.jpg",
-    "/images/team-1.jpg",
-    "/images/team-1.jpg",
-    "/images/team-1.jpg",
+    "/images/team/Fadhlul-Rezi.jpg",
+    "/images/team/Acong.jpg",
+    "/images/team/Hadi-Shirath.jpg",
+    "/images/team/Putri-Saver.jpg",
+    "/images/team/Miftahul-Fikri.jpg",
+    "/images/team/Bahagia.jpg",
+    "/images/team/Zikran-Abrar.jpg",
+    "/images/team/Hatim.jpg",
   ];
 
   return (
@@ -68,12 +72,31 @@ function AboutUs({ bahasa }) {
               : "Mengkhususkan diri dalam industri event organizer di Aceh. Dengan komitmen yang kuat terhadap keunggulan, inovasi, dan profesionalisme, Mahaka Kreativa telah menjadikan dirinya sebagai mitra utama bagi perusahaan dan organisasi yang mencari solusi manajemen acara yang luar biasa dan sukses."}
           </motion.p>
 
-          <h1 className="text-4xl font-bold text-center py-16">Our Team</h1>
+          <h1 className="text-4xl font-bold text-center pt-16 pb-8">
+            Our Team
+          </h1>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center pb-4"
+          >
+            <motion.div
+              variants={slideInFromBottom(0.2)}
+              className="w-[300px] h-[300px] overflow-hidden bg-gray-500"
+            >
+              <img
+                src=" /images/team/Rais-Mukhayar.jpg"
+                alt=""
+                className="w-full"
+              />
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.1 }}
+            className="flex flex-wrap justify-center gap-4 pb-16"
           >
             {team.map((item, index) => (
               <motion.div
@@ -86,7 +109,7 @@ function AboutUs({ bahasa }) {
             ))}
           </motion.div>
 
-          <h1 className="text-4xl font-bold text-center py-16">Office</h1>
+          {/* <h1 className="text-4xl font-bold text-center py-16">Office</h1>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -101,7 +124,7 @@ function AboutUs({ bahasa }) {
               variants={slideInFromBottom(0.2)}
               className="w-[450px] h-[300px] bg-gray-500"
             ></motion.div>
-          </motion.div>
+          </motion.div> */}
           <img
             src="/images/background.jpg"
             alt=""

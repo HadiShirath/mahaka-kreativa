@@ -44,7 +44,7 @@ function Footer({ bahasa }) {
       <div className="bg-black px-12 lg:px-24 py-12 lg:flex justify-between">
         <div className="flex flex-col lg:items-center">
           <img src="/images/logo-mahaka.png" alt="" className="w-40" />
-          <p className="text-gray-600 text-xl italic">Your Dreams Matter</p>
+          <p className="text-gray-500 text-xl italic">Your Dreams Matter</p>
         </div>
         <div className="hidden lg:flex flex-col justify-around ">
           <p className="text-lg">Want to Hire Us?</p>
@@ -79,7 +79,11 @@ function Footer({ bahasa }) {
                 className="h-[30px] w-auto hover:scale-125 transition-all duration-300"
               />
             </a>
-            <a href="https://www.instagram.com/maha.kreativa/" target="_blank">
+            <a
+              href="https://www.instagram.com/maha.kreativa/"
+              target="_blank"
+              aria-label="Instagram"
+            >
               <img
                 src="/images/instagram.png"
                 alt=""
